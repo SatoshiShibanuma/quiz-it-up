@@ -1,3 +1,4 @@
+import { describe, test, expect } from 'vitest';
 import { theme, mediaQueries } from '../index';
 
 describe('Responsive Theme Configuration', () => {
@@ -26,8 +27,8 @@ describe('Responsive Theme Configuration', () => {
   });
 
   test('Responsive Utility Functions Exist', () => {
-    expect(theme.utils).toBeDefined();
-    expect(theme.utils.responsiveFontSize).toBeDefined();
-    expect(theme.utils.responsiveSpacing).toBeDefined();
+    const theme_utils = theme.utils as any;
+    expect(theme_utils.responsiveFontSize).toBeDefined();
+    expect(theme_utils.responsiveSpacing).toBeDefined();
   });
 });
