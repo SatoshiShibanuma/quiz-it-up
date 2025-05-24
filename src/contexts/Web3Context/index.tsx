@@ -12,8 +12,8 @@ import {
   QUIZ_ABI,
   METHODS,
   EVENTS
-} from "@constants";
-import { SubmitQuizReturn } from "@types";
+} from "../../constants";
+import { SubmitQuizReturn } from "../../types";
 
 export const Web3Context = createContext({
   currentAccount: "",
