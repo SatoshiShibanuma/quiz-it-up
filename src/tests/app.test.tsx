@@ -21,15 +21,15 @@ describe('App Configuration', () => {
       />
     );
 
-    console.log(container.innerHTML);  // Log the full HTML
-
-    const viewportMeta = container.querySelector('head meta[name="viewport"]');
+    // Ensure the meta tag is added to the document
+    const metaTags = document.getElementsByTagName('meta');
+    const viewportMeta = Array.from(metaTags).find(
+      tag => tag.getAttribute('name') === 'viewport'
+    );
     
-    expect(viewportMeta).not.toBeNull();
-    if (viewportMeta) {
-      expect(viewportMeta.getAttribute('content')).toBe(
-        'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'
-      );
-    }
+    expect(viewportMeta).toBeDefined();
+    expect(viewportMeta?.getAttribute('content')).toBe(
+      'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'
+    );
   });
 });
