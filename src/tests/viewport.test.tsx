@@ -1,7 +1,14 @@
 import { render } from "@testing-library/react";
-import App from "@pages/_app";
+import App from "src/pages/_app";
+import { JSDOM } from 'jsdom';
 
 describe("Viewport Meta Tag", () => {
+  beforeEach(() => {
+    const dom = new JSDOM('<!doctype html><html><body></body></html>');
+    global.document = dom.window.document;
+    global.window = dom.window as unknown as Window & typeof globalThis;
+  });
+
   it("should have the correct viewport meta tag", () => {
     // Render the App component
     render(<App 
