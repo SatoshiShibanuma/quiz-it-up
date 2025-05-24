@@ -21,11 +21,13 @@ describe('App Configuration', () => {
       />
     );
 
-    const viewportMeta = container.querySelector('meta[name="viewport"]');
+    const viewportMeta = container.querySelector('head meta[name="viewport"]');
     
     expect(viewportMeta).not.toBeNull();
-    expect(viewportMeta?.getAttribute('content')).toBe(
-      'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'
-    );
+    if (viewportMeta) {
+      expect(viewportMeta.getAttribute('content')).toBe(
+        'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'
+      );
+    }
   });
 });
