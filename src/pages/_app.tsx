@@ -1,8 +1,9 @@
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import { ChakraProvider } from "@chakra-ui/react";
-import { Web3ContextProvider, QuizContextProvider } from "@contexts";
-import { theme } from "@theme";
+import { Web3ContextProvider } from "../contexts/Web3Context";
+import { QuizContextProvider } from "../contexts/QuizContext";
+import { theme } from "../theme";
 
 const App = ({ Component, pageProps }: AppProps) => (
   <>
