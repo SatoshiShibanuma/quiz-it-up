@@ -21,6 +21,8 @@ describe('App Configuration', () => {
       />
     );
 
+    console.log(container.innerHTML);  // Log the full HTML
+
     const viewportMeta = container.querySelector('head meta[name="viewport"]');
     
     expect(viewportMeta).not.toBeNull();
