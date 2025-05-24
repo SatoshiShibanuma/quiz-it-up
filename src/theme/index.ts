@@ -1,4 +1,4 @@
-import { extendTheme, defineStyleConfig } from "@chakra-ui/react";
+import { extendTheme } from "@chakra-ui/react";
 
 // Responsive Breakpoints (mobile-first approach)
 const breakpoints = {
@@ -58,26 +58,6 @@ const space = {
   }
 };
 
-// Button Component Responsive Styles
-const Button = defineStyleConfig({
-  baseStyle: {
-    bgColor: "whiteAlpha.200 !important",
-    _hover: {
-      bgColor: "whiteAlpha.300 !important"
-    },
-    // Touch-friendly tap targets
-    minHeight: { base: '44px', md: '48px' },
-    minWidth: { base: '44px', md: '48px' }
-  },
-  sizes: {
-    // Responsive button sizes
-    md: {
-      h: { base: '44px', md: '48px' },
-      fontSize: { base: 'sm', md: 'md' }
-    }
-  }
-});
-
 export const theme = extendTheme({
   breakpoints,
   colors,
@@ -85,7 +65,24 @@ export const theme = extendTheme({
   fontSizes,
   space,
   components: {
-    Button
+    Button: {
+      baseStyle: {
+        bgColor: "whiteAlpha.200 !important",
+        _hover: {
+          bgColor: "whiteAlpha.300 !important"
+        },
+        // Touch-friendly tap targets
+        minHeight: { base: '44px', md: '48px' },
+        minWidth: { base: '44px', md: '48px' }
+      },
+      sizes: {
+        // Responsive button sizes
+        md: {
+          h: { base: '44px', md: '48px' },
+          fontSize: { base: 'sm', md: 'md' }
+        }
+      }
+    }
   },
   styles: {
     global: {
