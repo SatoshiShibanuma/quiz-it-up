@@ -1,6 +1,16 @@
+import React from 'react';
 import { render } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
 import App from '../pages/_app';
+
+// Mock the context providers to avoid dependency issues
+jest.mock('../contexts/Web3Context', () => ({
+  Web3ContextProvider: ({ children }: any) => children
+}));
+
+jest.mock('../contexts/QuizContext', () => ({
+  QuizContextProvider: ({ children }: any) => children
+}));
 
 describe('App Configuration', () => {
   it('should have viewport meta tag', () => {
