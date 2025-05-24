@@ -1,3 +1,4 @@
+import { describe, it, expect } from 'vitest';
 import { theme, createResponsiveStyle } from '../index';
 
 describe('Responsive Theme Configuration', () => {
