@@ -1,7 +1,7 @@
 import { FunctionComponent, createContext, useState } from "react";
-import { useWeb3 } from "@hooks";
-import { mockedQuiz } from "@utils";
-import { Quiz, Question, SubmitQuizReturn } from "@types";
+import { useWeb3 } from "../../hooks/useWeb3";
+import { mockedQuiz } from "../../utils";
+import { Quiz, Question, SubmitQuizReturn } from "../../types";
 
 export const QuizContext = createContext({
   quiz: {} as Quiz,
